@@ -6,9 +6,9 @@ const bookingSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    vehicle: {
+    festival: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Vehicle',
+        ref: 'Festival',
         required: true
     },
     startDate: {

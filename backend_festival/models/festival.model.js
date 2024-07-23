@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const vehicleSchema = new mongoose.Schema({
+const festivalSchema = new mongoose.Schema({
    name: {
         type: String,
    },
@@ -15,6 +15,6 @@ const vehicleSchema = new mongoose.Schema({
    }
 });
 
-const Vehicle = mongoose.model('Vehicle', vehicleSchema);
+const Festival = mongoose.model('Festival', festivalSchema);
 
-module.exports = Vehicle;
+module.exports = Festival;
