@@ -26,7 +26,7 @@ const bookingController = {
             await newBooking.save();
 
             // Actualizar la disponibilidad del vehículo
-            await findByIdAndUpdate(vehicle, { available: false });
+            await findByIdAndUpdate(festival, { available: false });
 
             res.status(201).json({ message: 'Booking created successfully', booking: newBooking });
         } catch (error) {
@@ -50,7 +50,7 @@ const bookingController = {
     getBooking: async (req, res) => {
         try {
             const { id } = req.params;
-            const booking = await findById(id).populate('vehicle');
+            const booking = await findById(id).populate('festival');
 
             if (!booking) {
                 return res.status(404).json({ message: 'Reserva no encontrada' });

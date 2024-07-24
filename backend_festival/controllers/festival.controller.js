@@ -54,7 +54,7 @@ const festivalController = {
         try {
             const { id } = req.params;
             const { festivalName, type, description, image, location, video, price, available } = req.body;
-            const updatedVehicle = await Vehicle.findByIdAndUpdate(id, {
+            const updatedFestival = await Festival.findByIdAndUpdate(id, {
                 festivalName,
                 type,
                 description,
