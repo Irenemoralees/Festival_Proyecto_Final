@@ -29,7 +29,7 @@ mongoose.connect(MONGO_URI, {
 // Definir rutas
 app.use('/api/users', userRoutes);
 app.use('/api/bookings', bookingRoutes);
-app.use('/api/vehicles', festivalRoutes);
+app.use('/api/festivals', festivalRoutes);
 
 // Definir el puerto y poner en marcha el servidor
 const PORT = process.env.PORT || 3000;
