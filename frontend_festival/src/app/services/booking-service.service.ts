@@ -26,7 +26,7 @@ export class BookingService {
   }
 
   saveBooking(
-    vehicleId: string,
+    festivalId: string,
     sDate: string,
     eDate: string,
     price: number,
