@@ -21,9 +21,6 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 const festivals = [
-<<<<<<< HEAD
-    
-=======
     { _id: new mongoose.Types.ObjectId(), festivalName: "Primavera Sound", type: "pop-rock, indie", description: "El Primavera Sound recupera su espíritu original con un cartel que homenajea los noventa y refleja las músicas del mundo, el underground y el mainstream, destacando la paridad y con un lineup mayoritariamente femenino. El festival asume su responsabilidad cultural y social, demostrando un compromiso con la igualdad.", image: "https://www.thenewbarcelonapost.com/wp-content/uploads/2022/06/Primavera-Sound-%C2%A9-Gaelle-Beri.jpg", location: "Barcelona", video: "https://youtu.be/SwjYFlMgKt4?si=9Mr1BEUueECukfMz" },
     { _id: new mongoose.Types.ObjectId(), festivalName: "Mad Cool Festival", type: "pop-rock, indie", description: "El Mad Cool Festival es un evento musical en Madrid conocido por su variada oferta de géneros, que incluye rock, indie, pop, electrónica, hip-hop y música experimental. Atrae tanto a artistas consagrados como emergentes, ofreciendo una experiencia musical diversa y rica para sus asistentes.", image: "https://www.telemadrid.es/2020/02/18/noticias/cultura/Imagen-Mad-Cool_2205689432_7557944_1300x731.jpg", location: "Madrid", video: "https://youtu.be/WimUhHwVnSo?si=heaWktGRuZmvCtTw" },
     { _id: new mongoose.Types.ObjectId(), festivalName: "BBK Live Bilbao", type: "pop-rock, indie", description: "Festival que cuenta con bandas de la talla de Arcade Fire o Jungle y promesas como Alcalá Norte. Kobetamendi congrega a 110.000 personas procedentes de más de 50 países en estos tres días de disfrute de la música en directo en la naturaleza en un festival cuidado y comprometido en un entorno único en Bilbao BBK Live.", image: "https://bilbaobbklive.com/wp-content/uploads/2023/06/BBL22_AMBIENTE_LogoBBL_SHARONLOPEZ_2-1-scaled.jpg", location: "Bilbao", video: "https://youtu.be/SswWog-ZwsM?si=yHrWVZIt8cn-axsg" },
@@ -40,7 +37,6 @@ const festivals = [
     { _id: new mongoose.Types.ObjectId(), festivalName: "Reggaetón Beach Festival", type: "reguetón", description: "El **Reguetón Beach Festival** es un evento de música urbana centrado en reguetón y géneros relacionados, celebrado en playas y zonas costeras de España. Atrae a un público joven y ofrece una experiencia festiva en un ambiente playero.", image: "https://s3.eu-west-1.amazonaws.com/rbfweb2023/festivals/August2023/YMmJRVndzgxItkFFsxgB.jpg", location: "Madrid", video: "https://youtu.be/9k51XaBZLuw?si=xXJByZG2ova0rVrL" },
     { _id: new mongoose.Types.ObjectId(), festivalName: "Arenal Sound", type: "pop, rock, indie, electrónica", description: "Arenal Sound es un festival de música en Burriana, Castellón, que ofrece una variedad de géneros como pop, rock, indie y electrónica. Se celebra cerca de la playa, atrae a un público joven y cuenta con múltiples escenarios durante varios días.", image: "https://estaticos-cdn.prensaiberica.es/clip/540119ae-60b7-4a20-9c04-6b40cd5b7a37_16-9-discover-aspect-ratio_default_0.jpg", location: "Castellón", video: "https://youtu.be/OU3QgGAEUFM?si=4CIYkyKE-im0ErTc" }
 
->>>>>>> d9f100dd62103603532471a5ae969a14467c2612
 ];
 
 
