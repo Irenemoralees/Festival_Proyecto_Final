@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { Vehicle } from '../../interfaces/vehicle';
-import { VehicleService } from '../../services/vehicle.service';
+
 import { DivisaPipe } from '../../pipes/divisa.pipe';
 import {
   FormBuilder,
@@ -15,6 +14,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { BookingFormData } from '../../interfaces/booking-form-data';
 import { BookingService } from '../../services/booking.service';
 import Swal from "sweetalert2"
+import { FestivalService } from '../../services/festival.service';
 
 @Component({
   selector: 'app-rent',
@@ -25,13 +25,13 @@ import Swal from "sweetalert2"
 })
 export class RentComponent implements OnDestroy {
   parametro: string | null = null;
-  vehicle: Vehicle | null = null;
+  festival: Festival | null = null;
   mostrarCodigoPromocional: boolean = false;
   form!: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
-    private vehicleService: VehicleService,
+    private festivalService: FestivalService,
     private builder: FormBuilder,
     public authService: AuthService,
     private cookieService: CookieService,
@@ -55,9 +55,9 @@ export class RentComponent implements OnDestroy {
     });
 
     if (this.parametro !== null) {
-      vehicleService.getById(this.parametro).subscribe({
+      festivalService.getById(this.parametro).subscribe({
         next: (response) => {
-          this.vehicle = response as Vehicle;
+          this.festival = response as Festival;
         },
         error: () => {},
       });
@@ -92,12 +92,12 @@ export class RentComponent implements OnDestroy {
  }
 
  enviar(){
-  this.bookingService.saveBooking(this.vehicle!._id, this.form.value.fechaInicio,
-    this.form.value.fechaFin, this.numDias * this.vehicle!.pricePerDay, 0).subscribe({
+  this.bookingService.saveBooking(this.festival!._id, this.form.value.fechaInicio,
+    this.form.value.fechaFin, this.numDias * this.festival!.pricePerDay, 0).subscribe({
       next: ()=>{
         Swal.fire({
           title: "Reserva realizada",
-          text: `Tu ${this.vehicle!.brand} ${this.vehicle!.model} está listo`,
+          text: `Tu ${this.festival!.brand} ${this.festival!.model} está listo`,
           icon: "success",
           timer: 2000,
           didClose: ()=>{
