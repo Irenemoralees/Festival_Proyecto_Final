@@ -1,14 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Vehicle } from '../interfaces/vehicle';
+import { Festival } from '../interfaces/festival';
 
 @Pipe({
   name: 'filterVehicles',
   standalone: true
 })
-export class FilterVehiclesPipe implements PipeTransform {
+export class FilterFestivalsPipe implements PipeTransform {
 
-  transform(value: Vehicle[], filtro: string): Vehicle[] {
-    return value.filter(x=> x.model.toLowerCase().includes(filtro) || x.brand.toLocaleLowerCase().includes(filtro))
+  transform(value: Festival[], filtro: string): Festival[] {
+    return value.filter(x=> x.type.toLowerCase().includes(filtro) || x.location.toLocaleLowerCase().includes(filtro))
   }
 
 }
