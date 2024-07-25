@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
-import { Vehicle } from '../../interfaces/vehicle';
-import { VehicleService } from '../../services/vehicle.service';
+import { Festival } from '../../interfaces/festival';
+import { FestivalService } from '../../services/festival.service';
 import { DivisaPipe } from '../../pipes/divisa.pipe';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { FilterVehiclesPipe } from '../../pipes/filter-vehicles.pipe';
+import { FilterFestivalsPipe } from '../../pipes/filter-festivals.pipe';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DivisaPipe, RouterModule, FormsModule, FilterVehiclesPipe],
+  imports: [DivisaPipe, RouterModule, FormsModule, FilterFestivalsPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  vehicles: Vehicle[] =[]
+  festivals: Festival[] =[]
   filtro: string = ""
 
-  constructor(private vehicleService: VehicleService){
-    vehicleService.getAll().subscribe({
+  constructor(private festivalService: FestivalService){
+    Service.getAll().subscribe({
       next: (response)=>{
-        this.vehicles = response as Vehicle[]
+        this.festivals = response as Festival[]
       },
       error: ()=>{}
     })

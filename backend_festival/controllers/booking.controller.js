@@ -1,6 +1,5 @@
-
-import Booking, { find, findById, findByIdAndDelete } from '../models/booking.model';
-import { findByIdAndUpdate } from '../models/festival.model';
+const Booking = require('../models/booking.model');
+const Festival = require('../models/festival.model');
 
 const bookingController = {
     // Crear una nueva reserva para el festival
@@ -9,7 +8,7 @@ const bookingController = {
             const { festival, startDate, endDate, price, discount } = req.body;
 
             // Verificar disponibilidad de entradas para el festival
-            const festivalAvailable = await Festivalstival.findById(festival);
+            const festivalAvailable = await Festival.findById(festival);
             if (!festivalAvailable.available) {
                 return res.status(400).json({ message: 'Festival no disponible' });
             }
@@ -25,8 +24,8 @@ const bookingController = {
 
             await newBooking.save();
 
-            // Actualizar la disponibilidad del vehículo
-            await findByIdAndUpdate(festival, { available: false });
+            // Actualizar la disponibilidad del festival
+            await Festival.findByIdAndUpdate(festival, { available: false });
 
             res.status(201).json({ message: 'Booking created successfully', booking: newBooking });
         } catch (error) {

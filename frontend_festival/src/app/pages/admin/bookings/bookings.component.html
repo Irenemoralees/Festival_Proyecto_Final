@@ -1,7 +1,7 @@
 @if(bookings.length === 0) {
     <div class="alert alert-warning">
       <i class="fa fa-circle-info"></i>
-      No tienes reservas todavía
+      No tienes compras todavía
     </div>
   } @else {
     <table class="table">
@@ -13,8 +13,8 @@
           <th scope="col">Rol</th>
           <th scope="col">Fecha inicio</th>
           <th scope="col">Fecha fin</th>
-          <th scope="col">Marca</th>
-          <th scope="col">Modelo</th>
+          <th scope="col">Nombre del festival</th>
+          <th scope="col">Tipo</th>
           <th scope="col">Precio</th>
           <th scope="col">Descuento %</th>
         </tr>
@@ -35,8 +35,8 @@
             <td>{{ booking.user.role }}</td>
             <td>{{ booking.startDate | formatDate }}</td>
             <td>{{ booking.endDate | formatDate }}</td>
-            <td>{{ booking.vehicle.brand }}</td>
-            <td>{{ booking.vehicle.model }}</td>
+            <td>{{ booking.festival.brand }}</td>
+            <td>{{ booking.festival.model }}</td>
             <td>{{ booking.price | divisa }}</td>
             <td>{{ booking.discount }}</td>
           </tr>

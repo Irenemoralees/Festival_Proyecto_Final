@@ -1,4 +1,4 @@
-<h1>Catálogo de vehículos ({{ vehicles.length }})</h1>
+<h1>Catálogo de festivales ({{ festivals.length }})</h1>
 <div class="input-group mb-3">
   <span class="input-group-text">
     <i class="fa fa-filter"></i>
@@ -7,24 +7,24 @@
 </div>
  
 <ul class="row list-unstyled">
-    @for(vehicle of (vehicles | filterVehicles: filtro) ; track vehicle){
+    @for(festival of (festivals | filterFestivals: filtro) ; track festival){
         <li class="col-md-6 col-sm-12 col-lg-3 my-1">
             <div class="card h-100" >
-                <img [src]="vehicle.image" height="160"  class="card-img-top" alt="...">
+                <img [src]="festival.image" height="160"  class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">{{vehicle.brand}} {{vehicle.model}}</h5>
-                  <p class="card-text">{{vehicle.description}}</p>
-                  <p class="card-text">{{vehicle.pricePerDay | divisa}} por día</p>
+                  <h5 class="card-title">{{festival.festivalName}} {{festival.type}}</h5>
+                  <p class="card-text">{{festival.description}}</p>
+                  <p class="card-text">{{festival.price | divisa}} por día</p>
                   
                   @if(vehicle.available){
-                    <a [routerLink]="'/rent/'+vehicle._id"  class="btn btn-outline-primary">Alquilar</a>
+                    <a [routerLink]="'/buy/'+festival._id"  class="btn btn-outline-primary">Comprar</a>
                   }
                   @else {
-                    <span class="sin-stock">Sin stock</span>
+                    <span class="sin-stock">Entradas no disponibles</span>
                   }
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Modelo del año {{vehicle.year}}</small>
+                    <small class="text-muted">Localización {{festival.location}}</small>
                 </div>
               </div>
         </li>

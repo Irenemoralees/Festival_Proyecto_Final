@@ -11,7 +11,7 @@ import { MyInfoComponent } from './pages/me/my-info/my-info.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { BookingsComponent } from './pages/admin/bookings/bookings.component';
 import { UsersComponent } from './pages/admin/users/users.component';
-import { VehiclesComponent } from './pages/admin/vehicles/vehicles.component';
+import { VehiclesComponent } from './pages/admin/festivals/festivals.component';
 import { isAdminGuard } from './guards/admin.guard';
 
 

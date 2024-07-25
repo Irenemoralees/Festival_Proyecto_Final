@@ -1,10 +1,10 @@
 import { User } from "./user";
-import { Vehicle } from "./vehicle";
+import { Festival } from "./festival";
 
 export interface Booking {
     _id: string
     user: User
-    vehicle: Vehicle
+    festival: Festival
     startDate: string
     endDate: string
     price: number

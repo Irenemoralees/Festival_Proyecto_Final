@@ -1,6 +1,24 @@
+// import { Component } from '@angular/core';
+// import { RouterModule } from '@angular/router';
+
+
+// @Component({
+//   selector: 'app-navbar',
+//   standalone: true,
+//   imports: [RouterModule],
+//   templateUrl: './navbar.component.html',
+//   styleUrl: './navbar.component.css'
+// })
+// export class NavbarComponent {
+
+//   constructor(){
+  
+//   }
+// }
+
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +29,7 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor(){
+  constructor(public authService: AuthService){
   
   }
 }

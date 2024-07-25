@@ -1,0 +1,31 @@
+<h1>Gestión de Festivales ({{ festivals.length }})</h1>
+<div class="input-group mb-3">
+  <span class="input-group-text">
+    <i class="fa fa-filter"></i>
+  </span>
+  <input [(ngModel)]="filtro" type="text" class="form-control" placeholder="Filtrar">
+</div>
+
+<div>
+    <button (click)="addNewFestival()" class="btn btn-primary mb-3">Nuevo Festival</button>
+</div>
+
+<ul class="row list-unstyled">
+    @for(festival of (festivals | filterFestivals: filtro); track festival){
+        <li class="col-md-6 col-sm-12 col-lg-3 my-1">
+            <div class="card h-100">
+                <img [src]="festival.image" height="160" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ festival.festivalName }} {{ festival.model }}</h5>
+                    <p class="card-text">{{ festival.description }}</p>
+                    <p class="card-text">{{ festival.price | divisa }}</p>
+                    <button (click)="editar(festival._id)" class="btn btn-outline-secondary">Editar</button>
+                    <button (click)="eliminar(festival._id)" id="button" class="btn btn-outline-danger">Eliminar</button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Modelo del año {{ festival.year }}</small>
+                </div>
+            </div>
+        </li>
+    }
+</ul>
