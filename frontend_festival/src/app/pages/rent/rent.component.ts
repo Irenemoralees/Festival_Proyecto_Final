@@ -12,7 +12,7 @@ import {
 import { AuthService } from '../../services/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 import { BookingFormData } from '../../interfaces/booking-form-data';
-import { BookingService } from '../../services/booking-service';
+import { BookingService } from '../../services/booking.service';
 import Swal from "sweetalert2"
 import { FestivalService } from '../../services/festival.service';
 import { Festival } from '../../interfaces/festival';

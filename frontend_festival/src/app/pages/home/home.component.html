@@ -16,7 +16,7 @@
                   <p class="card-text">{{festival.description}}</p>
                   <p class="card-text">{{festival.price | divisa}} por día</p>
                   
-                  @if(vehicle.available){
+                  @if(festival.available){
                     <a [routerLink]="'/buy/'+festival._id"  class="btn btn-outline-primary">Comprar</a>
                   }
                   @else {

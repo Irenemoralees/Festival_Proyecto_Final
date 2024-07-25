@@ -6,7 +6,7 @@ import { DivisaPipe } from '../../../pipes/divisa.pipe';
 import { AuthService } from '../../../services/auth.service';
 import Swal from "sweetalert2"
 import { CanCancelPipe } from '../../../pipes/can-cancel.pipe';
-import { BookingService } from '../../../services/booking-service.service';
+import { BookingService } from '../../../services/booking.service';
 
 
 @Component({

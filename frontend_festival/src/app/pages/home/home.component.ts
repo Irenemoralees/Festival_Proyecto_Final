@@ -18,7 +18,7 @@ export class HomeComponent {
   filtro: string = ""
 
   constructor(private festivalService: FestivalService){
-    Service.getAll().subscribe({
+    festivalService.getAll().subscribe({
       next: (response)=>{
         this.festivals = response as Festival[]
       },

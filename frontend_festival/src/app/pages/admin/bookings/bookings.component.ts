@@ -72,7 +72,7 @@ export class BookingsComponent {
     if (reservaEditar) {
       console.log('Editar reserva:', reservaEditar)
       Swal.fire({
-        title: `Editar reserva del ${reservaEditar.festival.brand} ${reservaEditar.festival.model}`,
+        title: `Editar reserva del ${reservaEditar.festival.festivalName} ${reservaEditar.festival.type}`,
         html: `<div>
           <div>
             <label class="form-label">Fecha inicio</label>
