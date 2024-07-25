@@ -15,6 +15,7 @@ import { BookingFormData } from '../../interfaces/booking-form-data';
 import { BookingService } from '../../services/booking-service';
 import Swal from "sweetalert2"
 import { FestivalService } from '../../services/festival.service';
+import { Festival } from '../../interfaces/festival';
 
 @Component({
   selector: 'app-rent',
@@ -93,11 +94,11 @@ export class RentComponent implements OnDestroy {
 
  enviar(){
   this.bookingService.saveBooking(this.festival!._id, this.form.value.fechaInicio,
-    this.form.value.fechaFin, this.numDias * this.festival!.pricePerDay, 0).subscribe({
+    this.form.value.fechaFin, this.numDias * this.festival!.price, 0).subscribe({
       next: ()=>{
         Swal.fire({
           title: "Reserva realizada",
-          text: `Tu ${this.festival!.brand} ${this.festival!.model} está listo`,
+          text: `Tu ${this.festival!.location} ${this.festival!.type} está listo`,
           icon: "success",
           timer: 2000,
           didClose: ()=>{
