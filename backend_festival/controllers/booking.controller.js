@@ -120,4 +120,4 @@ const bookingController = {
 }
 };
 
-export default bookingController;
+module.exports = bookingController;
