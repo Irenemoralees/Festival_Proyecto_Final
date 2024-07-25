@@ -1,8 +1,8 @@
-import { FilterVehiclesPipe } from './filter-vehicles.pipe';
+import { FilterFestivalsPipe } from './filter-festivals.pipe';
 
-describe('FilterVehiclesPipe', () => {
+describe('FilterFestivalsPipe', () => {
   it('create an instance', () => {
-    const pipe = new FilterVehiclesPipe();
+    const pipe = new FilterFestivalsPipe();
     expect(pipe).toBeTruthy();
   });
 });
