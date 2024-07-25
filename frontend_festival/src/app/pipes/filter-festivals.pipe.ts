@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Festival } from '../interfaces/festival';
 
 @Pipe({
-  name: 'filterVehicles',
+  name: 'filterFestivals',
   standalone: true
 })
 export class FilterFestivalsPipe implements PipeTransform {
