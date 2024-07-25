@@ -1,10 +1,12 @@
-export interface Vehicle {
+export interface Festival {
     _id: string
-    brand: string
+    festivalName: string
+    type: string
     description: string
-    model: string
     image: string
-    pricePerDay: number
+    location: string
+    video: string
+    price: number
     year: number
     available: boolean
     __v: number
