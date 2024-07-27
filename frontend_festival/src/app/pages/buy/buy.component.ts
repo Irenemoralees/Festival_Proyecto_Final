@@ -18,13 +18,13 @@ import { FestivalService } from '../../services/festival.service';
 import { Festival } from '../../interfaces/festival';
 
 @Component({
-  selector: 'app-rent',
+  selector: 'app-buy',
   standalone: true,
   imports: [DivisaPipe, ReactiveFormsModule, RouterModule],
-  templateUrl: './rent.component.html',
-  styleUrl: './rent.component.css',
+  templateUrl: './buy.component.html',
+  styleUrl: './buy.component.css',
 })
-export class RentComponent implements OnDestroy {
+export class BuyComponent implements OnDestroy {
   parametro: string | null = null;
   festival: Festival | null = null;
   mostrarCodigoPromocional: boolean = false;
@@ -74,7 +74,7 @@ export class RentComponent implements OnDestroy {
 
     this.cookieService.set("booking-form-data", JSON.stringify(data))
 
-    //console.log("Adiós rent", this.form.value)
+    //console.log("Adiós buy", this.form.value)
   }
 
  
