@@ -57,10 +57,10 @@ const seedDB = async () => {
         await newFestival.save();
     }
 
-    for (const booking of bookings) {
-        const newBooking = new Booking(booking);
-        await newBooking.save();
-    }
+    // for (const booking of bookings) {
+    //     const newBooking = new Booking(booking);
+    //     await newBooking.save();
+    // }
 };
 
 seedDB().then(() => {

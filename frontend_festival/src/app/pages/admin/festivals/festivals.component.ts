@@ -63,6 +63,10 @@ export class FestivalsComponent {
                 <label class="form-label">Localización</label>
                 <input id="location" type="text" class="form-control" value="${festival.location}">
               </div>
+              <div>
+                <label class="form-label">Video</label>
+                <input id="location" type="text" class="form-control" value="${festival.video}">
+              </div>
             </div>`,
             showCancelButton: true,
             confirmButtonText: 'Guardar cambios',

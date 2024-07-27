@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class FestivalService {
-  private url = 'http://localhost:3000/api/festival';
+  private url = 'http://localhost:3000/api/festivals';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

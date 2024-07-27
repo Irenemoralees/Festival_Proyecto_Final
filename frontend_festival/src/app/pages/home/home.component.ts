@@ -21,6 +21,7 @@ export class HomeComponent {
     festivalService.getAll().subscribe({
       next: (response)=>{
         this.festivals = response as Festival[]
+        console.log(this.festivals)
       },
       error: ()=>{}
     })
