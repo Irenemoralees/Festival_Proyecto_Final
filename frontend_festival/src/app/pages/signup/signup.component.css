@@ -1,29 +1,24 @@
 
-body, html {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
+html, body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
 }
 
-/* Estilo del contenedor principal */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    margin: 0; /* Eliminar márgenes */
+    width: 100%;
+    height: 100vh;
     background-image: url(https://img.freepik.com/premium-photo/party-beach-blurred-people-having-night-beach-party-generative-ai_431161-4901.jpg);
     background-repeat: no-repeat;
-    background-size: contain; /* Ajusta la imagen para que esté completamente visible */
-    background-position: center;
-    height: 100vh; 
-    width: 100%; 
-    background-size: cover; 
+    background-size: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+    background-position: center; /*Centra la imagen*/
 }
 
 /* Estilo del formulario */
@@ -41,7 +36,7 @@ form {
 
 
 h1 {
-    font-size: 2px;
+    font-size: 40px;
     color: #000000; 
     margin-bottom: 1.5rem;
 }

@@ -16,6 +16,7 @@ import { FilterFestivalsPipe } from '../../pipes/filter-festivals.pipe';
 export class HomeComponent {
   festivals: Festival[] =[]
   filtro: string = ""
+authService: any;
 
   constructor(private festivalService: FestivalService){
     festivalService.getAll().subscribe({

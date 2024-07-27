@@ -22,6 +22,9 @@
                   @else {
                     <span class="sin-stock">Entradas no disponibles</span>
                   }
+                  <!-- @if(authService.user.role === 'admin'){
+                    <a [routerLink]="'/buy/'+festival._id"  class="btn btn-outline-primary" style="display: none;">Comprar</a>
+                  } -->
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Localización {{festival.location}}</small>
