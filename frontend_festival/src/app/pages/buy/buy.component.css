@@ -1,6 +1,226 @@
+/* Estilo general del contenedor */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ff6f61, #ffb74d); /* Gradiente en colores festivos */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+    margin: auto;
+}
 
-.separador{
-    width: 1px;
-    background-color: rgb(102, 102, 102);
-    height: 400px;
+/* Información del festival */
+.col-md-5:first-of-type {
+    background: #ffffff; /* Fondo blanco para el contenido */
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.col-md-5:first-of-type img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.col-md-5:first-of-type p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #333333; /* Color del texto */
+}
+
+/* Separador vertical (visible solo en pantallas grandes) */
+.col-md-1 {
+    display: none;
+}
+
+.separador {
+    width: 4px;
+    height: 100%;
+    background: #ffeb3b; /* Amarillo brillante para destacar */
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .col-md-1 {
+        display: block;
+    }
+}
+
+/* Estilo para el formulario */
+.col-md-5:last-of-type {
+    background: #ffffff; /* Fondo blanco para el contenido */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ff6f61; /* Color coral vibrante para el borde */
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-danger {
+    background-color: #e57373; /* Rojo festivo */
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #d32f2f; /* Rojo más oscuro */
+}
+
+.btn-outline-secondary {
+    border: 2px solid #ffb74d; /* Naranja brillante para el borde */
+    color: #333333;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #ffb74d; /* Fondo naranja brillante en hover */
+    color: #ffffff; /* Texto blanco en hover */
+}
+
+.btn-success {
+    background-color: #66bb6a; /* Verde festivo */
+    color: #ffffff;
+}
+
+.btn-success:hover {
+    background-color: #388e3c; /* Verde más oscuro */
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group .form-control {
+    border-radius: 0;
+}
+
+.input-group .btn-outline-secondary {
+    border-radius: 0;
+    border-left: 0;
+}
+
+/* Estilo para los precios y la sección total */
+.bg-secondary {
+    background-color: #ffb74d; /* Naranja brillante para la sección de precios */
+    color: #333333;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.bg-secondary .row {
+    margin-bottom: 1rem;
+}
+
+.bg-secondary .row:last-of-type {
+    margin-bottom: 0;
+}
+
+.bg-secondary .text-end {
+    text-align: right;
+}
+
+h4 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333333;
+}
+
+/* Estilo para el mensaje de alerta */
+.alert-danger {
+    background-color: #e57373; /* Rojo festivo */
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.alert-danger a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.alert-danger a:hover {
+    text-decoration: none;
+}
+
+/* Estilos responsivos */
+@media (max-width: 576px) {
+    .row {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .col-md-5:first-of-type,
+    .col-md-5:last-of-type {
+        flex: 1 1 100%;
+        margin-bottom: 1rem;
+    }
+
+    .separador {
+        display: none;
+    }
+
+    .bg-secondary {
+        padding: 1rem;
+    }
+
+    .alert-danger {
+        font-size: 0.875rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .row {
+        flex-direction: row;
+    }
+
+    .col-md-5:first-of-type,
+    .col-md-5:last-of-type {
+        flex: 1 1 48%;
+    }
+
+    .separador {
+        display: block;
+    }
+
+    .bg-secondary {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 993px) {
+    .row {
+        flex-direction: row;
+    }
+
+    .col-md-5:first-of-type,
+    .col-md-5:last-of-type {
+        flex: 1 1 48%;
+    }
+
+    .bg-secondary {
+        padding: 2rem;
+    }
 }

@@ -1,3 +1,189 @@
-#button{
-    margin-left: 10px;
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    color: #ffa726;
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+/* Filtro */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.filter-container span {
+    color: #ffa726;
+    margin-right: 0.5rem;
+}
+
+.filter-container input {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ffa726;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 250px;
+    transition: border-color 0.3s ease;
+}
+
+.filter-container input:focus {
+    border-color: #ffcc80;
+    outline: none;
+}
+
+/* Botón nuevo festival */
+.new-festival-button {
+    display: inline-block;
+    background: #ffa726;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 1.5rem 0;
+}
+
+.new-festival-button:hover {
+    background: #ffcc80;
+}
+
+/* Lista de festivales */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+li {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33.333% - 3rem); /* Ancho de cada tarjeta */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+li div {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+li img {
+    border-radius: 10px;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+li h5 {
+    color: #ffa726;
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+li p {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+li small {
+    color: #999;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+li button {
+    background: #4fc3f7;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+li button:hover {
+    background: #0d969b;
+}
+
+li button#button {
+    background: #ca0e08;
+}
+
+li button#button:hover {
+    background: #ffab91;
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .filter-container input {
+        width: 180px;
+    }
+
+    ul {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    li {
+        width: calc(100% - 2rem); /* Ancho de cada tarjeta en móvil */
+    }
+}
+
+/* Responsive para tablets */
+@media (min-width: 577px) and (max-width: 992px) {
+    ul {
+        max-width: 95%;
+    }
+
+    li {
+        width: calc(50% - 3rem); /* Ancho de cada tarjeta en tablet */
+    }
+}
+
+/* Responsive para ordenadores */
+@media (min-width: 993px) {
+    ul {
+        max-width: 85%;
+    }
 }

@@ -1,0 +1,157 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mensaje sin usuarios */
+#no-users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff6b6b;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Contenedor principal */
+.container {
+    margin: 2rem;
+}
+
+/* Título */
+.container h2 {
+    color: #ff6b6b;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Tabla de usuarios */
+.table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.table thead {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+.table th, .table td {
+    padding: 1rem;
+    text-align: left;
+}
+
+.table th {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.table tbody td {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+    .table {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+
+    .table th {
+        font-size: 0.9rem;
+    }
+
+    .no-users {
+        margin: 1rem;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsive para tablets */
+@media (min-width: 577px) and (max-width: 992px) {
+    .table {
+        width: 95%;
+        font-size: 0.9rem;
+    }
+
+    .table th, .table td {
+        padding: 0.8rem;
+    }
+
+    .table th {
+        font-size: 1rem;
+    }
+
+    .no-users {
+        margin: 1.5rem;
+        font-size: 1.1rem;
+        padding: 0.9rem;
+    }
+
+    .container h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Responsive para ordenadores */
+@media (min-width: 993px) {
+    .table {
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    .table th, .table td {
+        padding: 1rem;
+    }
+
+    .table th {
+        font-size: 1.1rem;
+    }
+
+    .no-users {
+        margin: 2rem;
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .container h2 {
+        font-size: 2rem;
+    }
+}

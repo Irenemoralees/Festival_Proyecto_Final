@@ -1,0 +1,187 @@
+nav {
+    background: linear-gradient(45deg, #ff6b6b, #ffcc00); /* Fondo vibrante */
+    color: #ffffff; 
+    padding: 1rem; 
+    font-family: 'Arial', sans-serif; 
+    height: 150px;
+}
+
+nav div {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 4rem; /* Tamaño de fuente del título */
+    background-image: url('http://photos.prnewswire.com/prnfull/20140319/CG85859LOGO?p=publish'); /* Imagen de fondo */
+    background-size: cover; /* Cubrir todo el contenedor */
+    background-position: center; /* Centrar la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    padding: 2rem 4rem; /* Espaciado interno mayor */
+    border-radius: 10px; /* Bordes redondeados */
+    color: #ffffff; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto para mejor legibilidad */
+    height: 150px; /* Altura del contenedor */
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav button {
+    background: transparent; 
+    border: none; 
+    color: #ffffff; 
+    font-size: 1.5rem; 
+    cursor: pointer;
+}
+
+nav button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff; 
+    margin: 4px 0; 
+}
+
+nav #navbarNav {
+    display: flex;
+    justify-content: center; 
+}
+
+nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    position: relative; /* Necesario para el submenú */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Transiciones suaves */
+}
+
+nav ul li a, nav ul li button {
+    color: #ffffff; 
+    text-decoration: none;
+    font-size: 40px; 
+    font-family: Poppins;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    position: relative;
+    z-index: 1;
+}
+
+/* Efecto festivo de desplazamiento y cambio de color */
+nav ul li:hover {
+    background-color: rgba(255, 165, 0, 0.6); /* Fondo naranja semitransparente para un efecto festivo */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    transform: scale(1.1); /* Aumentar el tamaño del elemento para un efecto festivo */
+    border: 2px solid #ffffff; /* Borde blanco para resaltar el elemento */
+}
+
+/* Efectos en enlaces y botones */
+nav ul li a:hover, nav ul li button:hover {
+    color: #e4405f; /* Cambia el color del texto a amarillo brillante */
+    transform: scale(1.15); /* Aumenta ligeramente el tamaño del texto para un efecto llamativo */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Sombra de texto brillante */
+    font-family: Bebas Neue, sans-serif;
+}
+
+/* Animación de fondo de enlace en hover */
+nav ul li a {
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 1rem;
+    transition: color 0.4s ease;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 99, 71, 0.8), rgba(255, 215, 0, 0.8)); /* Gradiente radial */
+    transition: width 0.4s ease, height 0.4s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+}
+
+nav ul li a:hover::before {
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+nav ul li a span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Submenú */
+nav ul ul {
+    display: none; 
+    position: absolute;
+    background-color: #dfff6b; 
+    padding: 1rem;
+    border-radius: 10px; 
+    top: 100%; /* Posicionar justo debajo del elemento padre */
+    left: 0;
+    z-index: 10; /* Asegurar que el submenú se superponga */
+    box-shadow: 0 8px 16px rgba(81, 218, 63, 0.3); /* Sombra para el submenú */
+}
+
+nav ul li:hover > ul {
+    display: block; /* Mostrar submenú al pasar el mouse */
+}
+
+nav ul ul li {
+    margin: 0.5rem 0; 
+}
+
+/* Responsivo para dispositivos pequeños */
+@media (max-width: 576px) {
+    nav div {
+        flex-direction: column;
+    }
+
+    nav #navbarNav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; 
+    }
+}
+
+/* Responsivo para tablets */
+@media (min-width: 577px) and (max-width: 992px) {
+    nav ul {
+        justify-content: space-around; 
+    }
+
+    nav ul li {
+        margin: 0.5rem;
+    }
+}
+
+/* Responsivo para ordenadores */
+@media (min-width: 993px) {
+    nav ul {
+        justify-content: center; 
+    }
+}

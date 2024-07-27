@@ -3,7 +3,7 @@ import { User } from '../../../interfaces/user';
 import { UserService } from '../../../services/user.service';
 import { FormatDatePipe } from '../../../pipes/format-date.pipe';
 import { DivisaPipe } from '../../../pipes/divisa.pipe';
-import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-users',
