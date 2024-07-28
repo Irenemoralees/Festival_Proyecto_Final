@@ -8,7 +8,14 @@ import { Festival } from '../interfaces/festival';
 export class FilterFestivalsPipe implements PipeTransform {
 
   transform(value: Festival[], filtro: string): Festival[] {
-    return value.filter(x=> x.type.toLowerCase().includes(filtro) || x.location.toLocaleLowerCase().includes(filtro))
+    if (!filtro) {
+      return value;
+    }
+    const filtroLower = filtro.toLowerCase();
+    return value.filter(festival =>
+      festival.type.toLowerCase().includes(filtroLower) ||
+      festival.location.toLowerCase().includes(filtroLower) ||
+      festival.festivalName.toLowerCase().includes(filtroLower)
+    );
   }
-
 }
