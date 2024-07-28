@@ -1,3 +1,40 @@
 .sin-stock{
     color: red;
 }
+
+h1 {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-size: 5rem;
+    color: rgb(218, 185, 225);
+    padding: 35px;
+    font-weight:900;
+    text-shadow: 3px 3px 3px #ffcc00;
+}
+
+.row{
+    background: linear-gradient(80deg, #6bf0ff, #fff2be);
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    
+}
+
+.card-footer{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(232, 254, 189);
+}
+
