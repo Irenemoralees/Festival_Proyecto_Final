@@ -27,6 +27,10 @@ body {
     color: #f39c12; /* Icono en color vibrante */
 }
 
+.separador{
+    margin-bottom: 10px;
+}
+
 /* Tabla de reservas */
 .table {
     width: 90%;

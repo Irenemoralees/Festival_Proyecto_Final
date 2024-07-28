@@ -21,9 +21,11 @@
         @for(booking of bookings ; track booking){
         <tr>
           <td>
+            <div class="separador">
             <button [disabled]="!(booking.startDate | canCancel)" (click)="eliminar(booking._id)" >
               <i class="fa fa-trash"></i>
             </button>
+            </div>
             <button [disabled]="!(booking.startDate | canCancel)" (click)="editar(booking._id)" >
               <i class="fa fa-pencil"></i>
             </button>

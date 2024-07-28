@@ -26,6 +26,10 @@ body {
     color: #f39c12;
 }
 
+.separador{
+    margin-bottom: 5px;
+}
+
 /* Tabla de compras */
 .table {
     width: 90%;
