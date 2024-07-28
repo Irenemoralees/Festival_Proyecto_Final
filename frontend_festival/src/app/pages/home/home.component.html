@@ -5,32 +5,26 @@
   </span>
   <input [(ngModel)]="filtro" type="text" class="form-control" placeholder="Filtrar">
 </div>
- 
+
 <ul class="row list-unstyled">
-    @for(festival of (festivals | filterFestivals: filtro) ; track festival){
-        <li class="col-md-6 col-sm-12 col-lg-3 my-1">
-            <div class="card h-100" >
-                <img [src]="festival.image" height="160"  class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{festival.festivalName}} {{festival.type}}</h5>
-                  <p class="card-text">{{festival.description}}</p>
-                  <p class="card-text">{{festival.price | divisa}} por día</p>
-                  
-                  @if(festival.available){
-                    <a [routerLink]="'/buy/'+festival._id"  class="btn btn-outline-primary">Comprar</a>
-                  }
-                  @else {
-                    <span class="sin-stock">Entradas no disponibles</span>
-                  }
-                  <!-- @if(authService.user.role === 'admin'){
-                    <a [routerLink]="'/buy/'+festival._id"  class="btn btn-outline-primary" style="display: none;">Comprar</a>
-                  } -->
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Localización {{festival.location}}</small>
-                </div>
-              </div>
-        </li>
-    }
-  
+  <li *ngFor="let festival of (festivals | filterFestivals: filtro)" class="col-md-6 col-sm-12 col-lg-3 my-1">
+    <div class="card h-100">
+      <img [src]="festival.image" height="160" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ festival.festivalName }} {{ festival.type }}</h5>
+        <p class="card-text">{{ festival.description }}</p>
+        <p class="card-text">{{ festival.price | divisa }} por día</p>
+
+        <ng-container *ngIf="festival.available; else noStock">
+          <a *ngIf="!isAdmin" [routerLink]="'/buy/' + festival._id" class="btn btn-outline-primary">Comprar</a>
+        </ng-container>
+        <ng-template #noStock>
+          <span class="sin-stock">Entradas no disponibles</span>
+        </ng-template>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Localización {{ festival.location }}</small>
+      </div>
+    </div>
+  </li>
 </ul>
