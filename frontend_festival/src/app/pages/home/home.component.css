@@ -10,7 +10,11 @@ body {
 .sin-stock{
     color: red;
 }
-
+h5 {
+    font-size: 18px;
+    font-weight: lighter;
+    font-style: italic;
+}
 h1 {
     height: 100%;
     margin: 0;
