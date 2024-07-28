@@ -1,14 +1,14 @@
 
 <div class="row">
-    @if(festival){
-    <div class="col-md-5">
-      <div>
-        <img [src]="festival.image" width="350" alt="" />
-  
-        <p>{{ festival.festivalName }} {{ festival.type }}</p>
-        <p>{{ festival.description }}</p>
-        <p>Localidad: {{ festival.location }}</p>
-      </div>
+  @if(festival){
+  <div class="col-md-5">
+    <div>
+      <img [src]="festival.image" width="350" alt="" />
+      <p id="festivalName">{{ festival.festivalName }}</p>
+      <p id="festivalType">{{ festival.type }}</p>
+      <p>{{ festival.description }}</p>
+      <p><i class="fas fa-map-marker-alt location-icon"></i>Localidad: {{ festival.location }}</p>
+    </div>
     </div>
     <div class="col-md-1 col-lg-1 d-none d-md-block">
       <div class="separador"></div>

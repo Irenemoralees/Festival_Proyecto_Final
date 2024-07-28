@@ -12,11 +12,6 @@
       color: #333;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-    .location-icon {
-      color: red; /* Color del icono */
-      font-size: 24px; /* Tamaño del icono */
-      margin-right: 10px; /* Espacio a la derecha del icono */
-    }
   </style>
 </head>
 <body>
@@ -37,7 +32,10 @@
             <a [routerLink]="'/buy/' + festival._id" class="festival-title-link">{{ festival.festivalName }}</a>
           </h4>
           <p class="card-text">{{ festival.description }}</p>
-          <p class="card-text">{{ festival.price | divisa }} por día</p>
+          <p class="card-text">
+            <i class="fas fa-wallet"></i>
+            Desde: {{ festival.price | divisa }}
+          </p>
 
           <ng-container *ngIf="festival.available; else noStock">
             <a *ngIf="!isAdmin" [routerLink]="'/buy/' + festival._id" class="btn btn-outline-primary">Comprar</a>
