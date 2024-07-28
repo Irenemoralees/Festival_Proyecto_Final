@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-
+import { Festival } from '../../interfaces/festival';
+import { FestivalService } from '../../services/festival.service';
 import { DivisaPipe } from '../../pipes/divisa.pipe';
 import {
   FormBuilder,
@@ -14,11 +15,9 @@ import { CookieService } from 'ngx-cookie-service';
 import { BookingFormData } from '../../interfaces/booking-form-data';
 import { BookingService } from '../../services/booking.service';
 import Swal from "sweetalert2"
-import { FestivalService } from '../../services/festival.service';
-import { Festival } from '../../interfaces/festival';
 
 @Component({
-  selector: 'app-buy',
+  selector: 'app-rent',
   standalone: true,
   imports: [DivisaPipe, ReactiveFormsModule, RouterModule],
   templateUrl: './buy.component.html',
@@ -74,7 +73,7 @@ export class BuyComponent implements OnDestroy {
 
     this.cookieService.set("booking-form-data", JSON.stringify(data))
 
-    //console.log("Adiós buy", this.form.value)
+    //console.log("Adiós rent", this.form.value)
   }
 
  
@@ -98,7 +97,7 @@ export class BuyComponent implements OnDestroy {
       next: ()=>{
         Swal.fire({
           title: "Reserva realizada",
-          text: `Tu ${this.festival!.location} ${this.festival!.type} está listo`,
+          text: `Tu ${this.festival!.festivalName} ${this.festival!.type} está listo`,
           icon: "success",
           timer: 2000,
           didClose: ()=>{

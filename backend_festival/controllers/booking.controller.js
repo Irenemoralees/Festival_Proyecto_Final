@@ -37,7 +37,7 @@ const bookingController = {
     getBookingsByUser: async (req, res) => {
         try {
             const { userId } = req.params;
-            const bookings = await find({ user: userId }).populate('festival');
+            const bookings = await Booking.find({ user: userId }).populate('festival').populate('user');
 
             res.status(200).json(bookings);
         } catch (error) {
@@ -49,7 +49,7 @@ const bookingController = {
     getBooking: async (req, res) => {
         try {
             const { id } = req.params;
-            const booking = await findById(id).populate('festival');
+            const booking = await Booking.findById(id).populate('festival').populate('user');
 
             if (!booking) {
                 return res.status(404).json({ message: 'Reserva no encontrada' });
@@ -64,7 +64,7 @@ const bookingController = {
        // Obtener todas las reservas
        getAllBookings: async (req, res) => {
         try {
-            const bookings = await find().populate('festival').populate('user');
+            const bookings = await Booking.find().populate('festival').populate('user');
 
             res.status(200).json(bookings);
         } catch (error) {
@@ -78,15 +78,15 @@ const bookingController = {
         try {
             const { id } = req.params;
 
-            const booking = await findById(id);
+            const booking = await Booking.findById(id);
             if (!booking) {
                 return res.status(404).json({ message: 'Reserva no encontrada' });
             }
 
             // Actualizar la disponibilidad de tickets para el festival
-            await findByIdAndUpdate(booking.festival, { available: true });
+            await Festival.findByIdAndUpdate(booking.festival, { available: true });
 
-            await findByIdAndDelete(id);
+            await Booking.findByIdAndDelete(id);
 
             res.status(200).json({ message: 'Booking cancelled successfully' });
         } catch (error) {
@@ -94,15 +94,14 @@ const bookingController = {
         }
     },
 
-
   // Editar una reserva
-   editBooking: async (req, res) => {
+  editBooking: async (req, res) => {
     try {
         const { id } = req.params;
         const { startDate, endDate } = req.body;
 
         // Encontrar la reserva
-        const booking = await findById(id);
+        const booking = await Booking.findById(id);
         if (!booking) {
             return res.status(404).json({ message: 'Reserva no encontrada' });
         }
