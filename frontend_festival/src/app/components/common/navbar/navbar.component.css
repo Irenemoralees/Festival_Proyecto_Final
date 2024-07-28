@@ -6,6 +6,58 @@ nav {
     height: 150px;
 }
 
+/* Esconder el menú en dispositivos pequeños por defecto */
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* Mostrar el menú en dispositivos grandes */
+  @media (min-width: 768px) {
+    .menu {
+      display: flex;
+    }
+    .menu-icon {
+      display: none;
+    }
+  }
+  
+  /* Mostrar el menú hamburguesa en dispositivos pequeños */
+  @media (max-width: 767px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+    .menu-icon {
+      display: block;
+    }
+  }
+  
+  /* Estilos para los elementos del menú */
+  .menu li {
+    padding: 15px;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: whitesmoke;
+    display: block;
+  }
+  
+  /* Estilos para el menú desplegable */
+  .menu.show {
+    display: flex;
+  }
+
 nav div {
     display: flex;
     justify-content: space-between; 

@@ -1,4 +1,4 @@
-<h1>Catálogo de festivales ({{ festivals.length }})</h1>
+<h1>Festivales Verano 2024</h1>
 <div class="input-group mb-3">
   <span class="input-group-text">
     <i class="fa fa-filter"></i>
@@ -6,7 +6,7 @@
   <input [(ngModel)]="filtro" type="text" class="form-control" placeholder="Filtrar">
 </div>
  
-<ul class="row list-unstyled">
+<ul class="row">
     @for(festival of (festivals | filterFestivals: filtro) ; track festival){
         <li class="col-md-6 col-sm-12 col-lg-3 my-1">
             <div class="card h-100" >
