@@ -1,3 +1,12 @@
+body {
+    /* margin-left: -300px; */
+    margin-right: -111px;
+    margin-left: -112px;
+    padding: 20px;
+    background: url('https://img.freepik.com/premium-photo/party-beach-blurred-people-having-night-beach-party-generative-ai_431161-4901.jpg') no-repeat center center fixed; /* Asegúrate de usar la ruta correcta a tu imagen */
+    background-size: cover; /* Cubre todo el área del fondo */
+  }
+  
 .sin-stock{
     color: red;
 }
@@ -12,20 +21,62 @@ h1 {
     font-family:Arial, Helvetica, sans-serif;
     margin: 0;
     font-size: 5rem;
-    color: rgb(218, 185, 225);
+    color: rgb(71, 129, 71);
     padding: 35px;
     font-weight:900;
     text-shadow: 3px 3px 3px #ffcc00;
 }
 
-.row{
-    background: linear-gradient(80deg, #6bf0ff, #fff2be);
-    border-radius: 10px;
+
+.card{
+    background: linear-gradient(135deg, #fcc676, #fdebd5);
+    border: 1px solid white;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    
+    transform: scale(1.07);
+    box-shadow: 0 0 15px 7px rgb(155, 253, 237);
+  }
+  
+.card-title{
+    text-shadow: 2px 2px 5px #4c8704;
+}
+.festival-title-link{
+    text-decoration: none;
+    color: rgb(40, 40, 40);
+}
+
+.card-subtitle { 
+    /* Tipo de música */
+    font-size: 18px;
+    font-weight: lighter;
+    font-style: italic;
+    text-transform: capitalize;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    /* Descripción del festival */
+    line-height: 30px;
+}
+.wallet-icon {
+    /* icono wallet */
+    color: rgb(165, 193, 123);
+}
+.card-price {
+    /* Precio del festival */
+    background-color: #fff2be;
+    border: 1px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    margin-right: 100px;
+    padding: 4px;
+    border-style: dotted;
+}
+
+.location-icon {
+    margin: 6px;
+    color: rgb(251, 99, 99);
 }
 
 .card-footer{
@@ -36,5 +87,10 @@ h1 {
     text-align: center;
     font-family:Arial, Helvetica, sans-serif;
     background-color: rgb(232, 254, 189);
+    border-radius: 4px;
 }
+.search-icon {
+    color: rgb(112, 169, 255);
+  }
 
+  

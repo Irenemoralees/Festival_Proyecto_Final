@@ -1,14 +1,3 @@
-body, html {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 /* Estilo del contenedor principal */
 .container {
@@ -17,7 +6,6 @@ body, html {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background-image: url('https://img.freepik.com/premium-photo/party-beach-blurred-people-having-night-beach-party-generative-ai_431161-4901.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

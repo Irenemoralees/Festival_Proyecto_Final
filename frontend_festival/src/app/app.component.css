@@ -1,4 +1,23 @@
-.container {
-    background: linear-gradient(80deg, #6bf0ff, #fff2be);
+/* Establecer margen y relleno a 0 para el body y html */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Asegurar que el contenedor principal ocupa todo el ancho y alto de la ventana */
+main {
+    background-image: url(https://img.freepik.com/premium-photo/party-beach-blurred-people-having-night-beach-party-generative-ai_431161-4901.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /* Asegura que la imagen cubre todo el área */
+    background-position: center; /* Centra la imagen en el contenedor */
     
+}
+
+/* Opcional: Estilo para navbar y footer si necesitas ajustes adicionales */
+app-navbar, app-footer {
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Asegura que el navbar y el footer se sitúan sobre el fondo */
 }

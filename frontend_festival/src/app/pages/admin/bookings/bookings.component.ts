@@ -1,76 +1,76 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Booking } from '../../../interfaces/booking';
 import { BookingService } from '../../../services/booking.service';
 import { FormatDatePipe } from '../../../pipes/format-date.pipe';
 import { DivisaPipe } from '../../../pipes/divisa.pipe';
 import { AuthService } from '../../../services/auth.service';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 import { CanCancelPipe } from '../../../pipes/can-cancel.pipe';
 
 @Component({
   selector: 'app-bookings',
   standalone: true,
-  imports: [FormatDatePipe, DivisaPipe, CanCancelPipe],
+  imports: [CommonModule, FormatDatePipe, DivisaPipe, CanCancelPipe],
   templateUrl: './bookings.component.html',
   styleUrls: ['./bookings.component.css'],
 })
-export class BookingsComponent {
+export class BookingsComponent implements OnInit {
   bookings: Booking[] = [];
 
+  constructor(private bookingService: BookingService, private authService: AuthService) {}
 
-  constructor(private bookingService: BookingService, private authService: AuthService){
+  ngOnInit() {
     this.bookingService.getAllBookings().subscribe({
-      next: (response)=>{
-        this.bookings = response as Booking[]
+      next: (response) => {
+        this.bookings = response as Booking[];
       },
-      error: ()=>{
-
-      }
-    })
+      error: () => {
+        // Manejo de errores
+      },
+    });
   }
 
   eliminar(bookingId: string) {
     Swal.fire({
-      title: "¿Estás seguro?",
-      text: "No podrás revertir esta acción",
-      icon: "warning",
+      title: '¿Estás seguro?',
+      text: 'No podrás revertir esta acción',
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Sí, eliminar"
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
     }).then((result) => {
       if (result.isConfirmed) {
         this.bookingService.deleteBooking(bookingId).subscribe({
           next: () => {
             Swal.fire({
-              title: "¡Reserva eliminada!",
-              text: "Tu reserva ha sido eliminada correctamente",
-              icon: "success",
+              title: '¡Reserva eliminada!',
+              text: 'Tu reserva ha sido eliminada correctamente',
+              icon: 'success',
               showConfirmButton: false,
-              timer: 2000
+              timer: 2000,
             });
 
-            this.bookings = this.bookings.filter(x => x._id !== bookingId);
+            this.bookings = this.bookings.filter((x) => x._id !== bookingId);
           },
           error: () => {
             Swal.fire({
-              title: "Oops!",
-              text: "Ha ocurrido un error",
-              icon: "error",
+              title: 'Oops!',
+              text: 'Ha ocurrido un error',
+              icon: 'error',
               showConfirmButton: false,
-              timer: 1500
+              timer: 1500,
             });
-          }
+          },
         });
       }
     });
   }
 
   editar(bookingId: string) {
-    console.log('Editar reserva:', bookingId)
-    const reservaEditar: Booking | undefined = this.bookings.find(x => x._id === bookingId);
+    const reservaEditar: Booking | undefined = this.bookings.find((x) => x._id === bookingId);
     if (reservaEditar) {
-      console.log('Editar reserva:', reservaEditar)
       Swal.fire({
         title: `Editar reserva del ${reservaEditar.festival.festivalName} ${reservaEditar.festival.type}`,
         html: `<div>
@@ -90,7 +90,7 @@ export class BookingsComponent {
           const startDate = (document.getElementById('startDate') as HTMLInputElement).value;
           const endDate = (document.getElementById('endDate') as HTMLInputElement).value;
           return { startDate, endDate };
-        }
+        },
       }).then((result) => {
         if (result.isConfirmed) {
           const { startDate, endDate } = result.value;
@@ -101,7 +101,7 @@ export class BookingsComponent {
                 text: 'La reserva ha sido actualizada correctamente',
                 icon: 'success',
                 showConfirmButton: false,
-                timer: 2000
+                timer: 2000,
               });
               reservaEditar.startDate = startDate;
               reservaEditar.endDate = endDate;
@@ -112,14 +112,19 @@ export class BookingsComponent {
                 text: 'Ha ocurrido un error al actualizar la reserva',
                 icon: 'error',
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1500,
               });
-            }
+            },
           });
         }
       });
     } else {
-      console.error('No se encontró la reserva a editar')
+      console.error('No se encontró la reserva a editar');
     }
   }
+
+  trackByBooking(index: number, booking: Booking) {
+    return booking._id;
+  }
 }
+

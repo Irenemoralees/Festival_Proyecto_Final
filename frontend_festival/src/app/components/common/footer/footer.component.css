@@ -1,20 +1,20 @@
 footer {
     background: linear-gradient(45deg, #ff6b6b, #ffcc00); 
     color: #ffffff; 
-    padding: 2rem; 
     text-align: center; 
     font-family: 'Arial', sans-serif; 
+    padding-top: 20px;
 }
 
 footer div {
-    margin-top: 1rem; 
+    margin-top: 5px; 
 }
 
 footer span {
     display: inline-block;
-    font-size: 1.5rem; 
+    font-size: 1.2; 
     margin: 0 1rem; 
-    padding: 0.5rem;
+    padding: 10px;
     transition: transform 0.3s, color 0.3s; /* Transición suave */
 }
 

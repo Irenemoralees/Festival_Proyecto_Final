@@ -1,50 +1,46 @@
-@if(bookings.length === 0) {
-    <div class="no-purchases" >
-      <i class="fa fa-circle-info"></i>
-      No tienes compras todavía
-    </div>
-  } @else {
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">Usuario</th>
-          <th scope="col">Email</th>
-          <th scope="col">Rol</th>
-          <th scope="col">Fecha inicio</th>
-          <th scope="col">Fecha fin</th>
-          <th scope="col">Nombre del festival</th>
-          <th scope="col">Tipo</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Descuento %</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for(booking of bookings; track booking) {
-          <tr>
-            <td>
-              <div class="separador">
-              <button [disabled]="!(booking.startDate | canCancel)" (click)="eliminar(booking._id)" >
-                <i class="fa fa-trash"></i>
-              </button>
-              </div>
-              
-              <button [disabled]="!(booking.startDate | canCancel)" (click)="editar(booking._id)"  >
-                <i class="fa fa-pencil"></i>
-              </button>
-            </td>
-            <td>{{ booking.user.email }}</td>
-            <td>{{ booking.user.name }}</td>
-            <td>{{ booking.user.role }}</td>
-            <td>{{ booking.startDate | formatDate }}</td>
-            <td>{{ booking.endDate | formatDate }}</td>
-            <td>{{ booking.festival.festivalName }}</td>
-            <td>{{ booking.festival.type }}</td>
-            <td>{{ booking.price | divisa }}</td>
-            <td>{{ booking.discount }}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  }
-  
+<h1>Reservas</h1>
+<div *ngIf="bookings.length === 0" class="no-purchases">
+  <i class="fa fa-circle-info"></i>
+  No tienes compras todavía
+</div>
+<div *ngIf="bookings.length > 0">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Fecha inicio</th>
+        <th scope="col">Fecha fin</th>
+        <th scope="col">Nombre del festival</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Descuento %</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings; trackBy: trackByBooking">
+        <td>
+          <div class="separador">
+            <button (click)="eliminar(booking._id)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+          <button (click)="editar(booking._id)">
+            <i class="fa fa-pencil"></i>
+          </button>
+        </td>
+        <td>{{ booking.user.email }}</td>
+        <td>{{ booking.user.name }}</td>
+        <td>{{ booking.user.role }}</td>
+        <td>{{ booking.startDate | formatDate }}</td>
+        <td>{{ booking.endDate | formatDate }}</td>
+        <td>{{ booking.festival.festivalName }}</td>
+        <td>{{ booking.festival.type }}</td>
+        <td>{{ booking.price | divisa }}</td>
+        <td>{{ booking.discount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
