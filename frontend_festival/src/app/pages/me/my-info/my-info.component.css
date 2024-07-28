@@ -125,7 +125,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #cc0000; /* Color de fondo al pasar el ratón */
+    background: #a5c72c; /* Color de fondo al pasar el ratón */
     transform: scale(1.05); /* Efecto de escala al pasar el ratón */
 }
 
@@ -141,7 +141,7 @@ button#button {
 }
 
 button#button:hover {
-    background: #cc5200; /* Color de fondo al pasar el ratón */
+    background: #cc0000; /* Color de fondo al pasar el ratón */
     transform: scale(1.05); /* Efecto de escala al pasar el ratón */
 }
 
@@ -174,7 +174,7 @@ div > button:hover {
 /* Mensaje de carga */
 p {
     text-align: center;
-    color: #dfff6b; 
+    color: #a5c72c; 
     font-size: 1.2rem;
     animation: pulse 1.5s infinite; /* Animación de pulso para el mensaje de carga */
 }

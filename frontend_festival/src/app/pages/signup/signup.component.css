@@ -1,102 +1,133 @@
-
-html, body {
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+body, html {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
     height: 100%;
-    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Estilo del contenedor principal */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0; /* Eliminar márgenes */
-    width: 100%;
-    height: 100vh;
-    background-image: url(https://img.freepik.com/premium-photo/party-beach-blurred-people-having-night-beach-party-generative-ai_431161-4901.jpg);
+    padding: 2rem;
+    background-image: url('https://img.freepik.com/premium-photo/party-beach-blurred-people-having-night-beach-party-generative-ai_431161-4901.jpg');
     background-repeat: no-repeat;
-    background-size: cover; /* Ajusta la imagen para que cubra todo el contenedor */
-    background-position: center; /*Centra la imagen*/
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
 }
 
 /* Estilo del formulario */
 form {
     background: linear-gradient(45deg, #ff6b6b, #ffcc00);
-    padding: 10px;
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 87, 34, 0.5); 
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.5);
     width: 100%;
-    max-width: 400px; 
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
 h1 {
-    font-size: 40px;
-    color: #000000; 
+    font-size: 2.5rem;
+    color: #000000;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
-.form-group {
-    width: 100%;
-    margin-bottom: 1.5rem;
+h1 .fa-user {
+    margin-right: 0.5rem;
 }
 
-
-label {
-    color: #000000; 
+.form-label {
+    color: #000000;
     font-size: 1.2rem;
     display: block;
     margin-bottom: 0.5rem;
 }
 
-/* Estilo de los campos del formulario */
 .form-control {
-    background-color: #fff; 
-    border: 2px solid #ff5722; 
-    color: #333; 
+    background-color: #fff;
+    border: 2px solid #ff5722;
+    color: #333;
     padding: 0.75rem;
-    border-radius: 5px; 
-    width: 100%;
+    border-radius: 5px;
+    width: 350px;
     box-sizing: border-box;
 }
 
-/* Estilo del botón de inicio de sesión */
-.submit-button {
-    background-color: #ff5722; 
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-group .form-control {
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-outline-secondary {
+    border-color: #ff5722;
+    color: #ff5722;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #ff5722;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #ff5722;
     border: none;
-    color: #fff; 
+    color: #fff;
     width: 100%;
     padding: 0.75rem;
     font-size: 1.25rem;
     transition: background-color 0.3s;
-    border-radius: 5px; 
+    border-radius: 5px;
     cursor: pointer;
 }
 
-/* Efecto al pasar el ratón sobre el botón */
-.submit-button:hover {
-    background-color: #e64a19; 
+.btn-primary .fa-key {
+    margin-right: 0.5rem;
 }
 
-/* Estilo del párrafo y enlaces */
+.btn-primary:hover {
+    background-color: #e64a19;
+}
+
 p {
     text-align: center;
-    margin-top: 2.5rem; 
-    color: #ffffff; 
+    margin-top: 1.5rem;
+    color: #ffffff;
 }
 
-/* Estilo del enlace dentro del párrafo */
-.signup-link {
-    color: #ff5722; 
+a.router-link {
+    color: #ff5722;
     text-decoration: none;
 }
 
-
-.signup-link:hover {
+a.router-link:hover {
     text-decoration: underline;
 }
