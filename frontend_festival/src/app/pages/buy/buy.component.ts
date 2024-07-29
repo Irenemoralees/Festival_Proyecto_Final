@@ -15,6 +15,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { BookingFormData } from '../../interfaces/booking-form-data';
 import { BookingService } from '../../services/booking.service';
 import Swal from "sweetalert2"
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-rent',
@@ -28,6 +29,7 @@ export class BuyComponent implements OnDestroy {
   festival: Festival | null = null;
   mostrarCodigoPromocional: boolean = false;
   form!: FormGroup;
+  safeUrl!: SafeResourceUrl;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +38,8 @@ export class BuyComponent implements OnDestroy {
     public authService: AuthService,
     private cookieService: CookieService,
     private bookingService: BookingService,
-    private router: Router
+    private router: Router,
+    private sanitizer: DomSanitizer
   ) {
     // abrir la cookie a ver si hay datos en el booking-form-data y sustituirlos en los null
     let data: BookingFormData = {startDate: null, endDate: null, promoCode: null}
@@ -58,6 +61,7 @@ export class BuyComponent implements OnDestroy {
       festivalService.getById(this.parametro).subscribe({
         next: (response) => {
           this.festival = response as Festival;
+          this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.festival.video);
         },
         error: () => {},
       });

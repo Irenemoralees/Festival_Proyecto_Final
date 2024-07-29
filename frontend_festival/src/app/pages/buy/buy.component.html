@@ -4,12 +4,17 @@
   <div class="col-md-5">
     <div>
       <img [src]="festival.image" width="350" alt="" />
+      
+      <iframe width="560" height="315" [src]=" safeUrl " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
       <p id="festivalName">{{ festival.festivalName }}</p>
       <p id="festivalType">{{ festival.type }}</p>
       <p>{{ festival.description }}</p>
       <p><i class="fas fa-map-marker-alt location-icon"></i>Localidad: {{ festival.location }}</p>
     </div>
     </div>
+    
     <div class="col-md-1 col-lg-1 d-none d-md-block">
       <div class="separador"></div>
     </div>

@@ -34,7 +34,7 @@ export class MyInfoService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.authService.user?.token}`,
     });
-    return this.http.delete<void>(`${this.url}/${this.authService.user?.id}`, { headers });
+    return this.http.delete<void>(`${this.url}/delete/${this.authService.user?.id}`, { headers });
   }
 
   updateUserPassword(userId: string, newPassword: string): Observable<void> {

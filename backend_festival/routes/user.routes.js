@@ -22,8 +22,10 @@ router.patch('/role/:adminId', protect, restrictTo('admin'), userController.upda
 // Ruta para obtener información personal del usuario
 router.get('/my-info/:id', protect, restrictTo('user', 'admin'), userController.getInfoByUser);
 
-// Ruta para eliminar un usuario (solo admin)
-router.delete('/delete/:id', protect, restrictTo('admin'), userController.deleteUser);
+
+
+// Ruta para eliminar un usuario 
+router.delete('/delete/:id', protect, restrictTo('user', 'admin'), userController.deleteUser);
 
 
 // Ruta para obtener todos los usuarios (solo admin)
