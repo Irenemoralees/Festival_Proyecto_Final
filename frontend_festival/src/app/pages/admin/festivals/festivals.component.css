@@ -10,8 +10,8 @@ body {
 
 /* Título principal */
 h1 {
-    color: #ffa726;
-    font-size: 3rem;
+    color: rgb(31, 30, 30);
+    font-size: 50px;
     margin: 1rem 0;
 }
 
