@@ -31,3 +31,6 @@
 
 ## Autenticación:
 - Implementación de autenticación utilizando JWT (JSON Web Tokens).
+
+
+

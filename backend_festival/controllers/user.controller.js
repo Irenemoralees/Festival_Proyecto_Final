@@ -102,6 +102,7 @@ const userController = {
             }
         },
     
+    
  // Obtener todos los usuarios (solo admin)
  getAllUsers: async (req, res) => {
     try {
