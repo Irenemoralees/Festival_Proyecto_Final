@@ -23,6 +23,7 @@
     </div>
     <div class="col-md-5">
       <form [formGroup]="form" action="" (ngSubmit)="enviar()">
+  
         <div class="mb-3">
           <label class="form-label" for="">Fecha inicio</label>
           <input formControlName="fechaInicio" class="form-control" type="date" />
@@ -32,6 +33,7 @@
           <label class="form-label" for="">Fecha fin</label>
           <input formControlName="fechaFin"  class="form-control" type="date" />
         </div>
+  
   
         <div>
           <p>
@@ -72,6 +74,9 @@
           <div class="row">
             <div class="col-md-6">
               <span>Número de días</span>
+            </div>
+            <div>
+           
             </div>
             <div class="col-md-6 text-end">
               <span>x {{ numDias }}</span>
