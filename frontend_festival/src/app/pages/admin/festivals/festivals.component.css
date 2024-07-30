@@ -70,6 +70,11 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
 }
+h4{
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 20px;
+}
 
 li {
     background: #fff;

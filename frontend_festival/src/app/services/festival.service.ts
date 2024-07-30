@@ -1,7 +1,7 @@
+import { Festival } from './../interfaces/festival';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Festival } from '../interfaces/festival';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -28,8 +28,8 @@ export class FestivalService {
     return this.http.get<Festival>(`${this.url}/${id}`, { headers: this.getAuthHeaders() });
   }
 
-  addFestival(vehicle: Festival): Observable<Festival> {
-    return this.http.post<Festival>(this.url, vehicle, { headers: this.getAuthHeaders() });
+  addFestival(festival: Festival): Observable<Festival> {
+    return this.http.post<Festival>(this.url, festival, { headers: this.getAuthHeaders() });
   }
 
   updateFestival(id: string, festival: Festival): Observable<any> {

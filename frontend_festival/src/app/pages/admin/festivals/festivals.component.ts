@@ -67,6 +67,14 @@ export class FestivalsComponent {
                 <label class="form-label">Video</label>
                 <input id="location" type="text" class="form-control" value="${festival.video}">
               </div>
+              <div>
+                <label class="form-label">Disponibilidad</label>
+                <input id="available" type="boolean" class="form-control" value="${festival.available}">
+              </div>
+              <div>
+                <label class="form-label">Image</label>
+                <input id="image" type="text" class="form-control" value="${festival.image}">
+              </div>
             </div>`,
             showCancelButton: true,
             confirmButtonText: 'Guardar cambios',
@@ -76,9 +84,14 @@ export class FestivalsComponent {
                 const type = (document.getElementById('type') as HTMLInputElement).value;
                 const description = (document.getElementById('description') as HTMLInputElement).value;
                 const price = parseFloat((document.getElementById('price') as HTMLInputElement).value);
-                const location = parseInt((document.getElementById('location') as HTMLInputElement).value, 10);
+                const location = parseInt((document.getElementById('location') as HTMLInputElement).value);
+                const video = parseInt((document.getElementById('video') as HTMLInputElement).value);
+                const image = parseInt((document.getElementById('image') as HTMLInputElement).value);
+                const available = parseInt((document.getElementById('available') as HTMLInputElement).value);
+
+
                 console.log('Datos de festivales actualizados:', { festivalName, type, description, price, location });
-                return { festivalName, type, description, price, location };
+                return { festivalName, type, description, price, location, video, image, available };
             }
         }).then((result) => {
             if (result.isConfirmed) {
@@ -175,11 +188,19 @@ export class FestivalsComponent {
         </div>
         <div>
           <label class="form-label">Localización</label>
-          <input id="location" type="number" class="form-control">
+          <input id="location" type="text" class="form-control">
         </div>
         <div>
           <label class="form-label">URL de la imagen</label>
           <input id="image" type="text" class="form-control">
+        </div>
+        <div>
+          <label class="form-label">URL del video</label>
+          <input id="video" type="text" class="form-control">
+        </div>
+        <div>
+          <label class="form-label">Disponibilidad</label>
+          <input id="available" type="boolean" class="form-control">
         </div>
       </div>`,
       showCancelButton: true,
@@ -192,14 +213,19 @@ export class FestivalsComponent {
         const price = parseFloat((document.getElementById('price') as HTMLInputElement).value);
         const location = parseInt((document.getElementById('location') as HTMLInputElement).value, 10);
         const image = (document.getElementById('image') as HTMLInputElement).value;
+        const video = (document.getElementById('video') as HTMLInputElement).value;
+        const available = (document.getElementById('available') as HTMLInputElement).value;
+
+
   
-        return { festivalName, type, description, price, location, image };
+        return { festivalName, type, description, price, location, image, video, available };
       }
     }).then((result) => {
       if (result.isConfirmed) {
         const newFestival = result.value;
         this.festivalService.addFestival(newFestival).subscribe({
           next: (response:any) => {
+            console.log(result)
             Swal.fire({
               title: 'Festival agregado!',
               text: 'El nuevo festival ha sido agregado correctamente',

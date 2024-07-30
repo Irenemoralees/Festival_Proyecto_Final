@@ -16,7 +16,8 @@
             <div>
                 <img [src]="festival.image" alt="Festival Image">
                 <div>
-                    <h5>{{ festival.festivalName }} {{ festival.type }}</h5>
+                    <h5>{{ festival.festivalName }}</h5>
+                    <h4>{{ festival.type }}</h4>
                     <p>{{ festival.description }}</p>
                     <p>{{ festival.price | divisa }}</p>
                     <button (click)="editar(festival._id)">Editar</button>
