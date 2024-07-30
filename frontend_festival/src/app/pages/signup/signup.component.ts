@@ -24,7 +24,7 @@ export class SignupComponent {
     this.form = builder.group({
       "name": new FormControl(null, [Validators.required]),
       "email": new FormControl(null, [Validators.required, Validators.email]),
-      "pwd": new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      "pwd": new FormControl(null, [Validators.required]),
     })
   }
 

@@ -3,7 +3,7 @@
       <h2 class="logo" href="#"> </h2>
  
 
-      <div class= "menu-icon" id="navbarNav menu-icon">
+      <div class="menu-icon" id="menu-icon">
         <ul class="menu" id="menu">
           <li >
             <a aria-current="page" routerLink="/">Inicio</a>
@@ -23,7 +23,7 @@
                 Área Admin
               </a>
               <ul aria-labelledby="navbarDropdown">
-                <li><a routerLink="/admin/bookings">Reservas</a></li>
+                <li ><a routerLink="/admin/bookings">Reservas</a></li>
                 <li><a routerLink="/admin/users">Usuarios</a></li>
                 <li><a  routerLink="/admin/festivals">Festivales</a></li>
            
@@ -45,7 +45,7 @@
               </ul>
             </li>
             <li >
-              <button (click)="authService.deleteUser()">Cerrar sesión</button>
+              <button (click)="authService.deleteUser()"> <a  routerLink="/home">Cerrar sesión</a></button>
             </li>
           }
           
