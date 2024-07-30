@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule  } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { User } from '../../../interfaces/user';
 import { MyInfoService } from '../../../services/my-info.service';
 import { AuthService } from '../../../services/auth.service';
 import Swal from 'sweetalert2';
 import { RouterModule } from '@angular/router';
-
 
 @Component({
   selector: 'app-my-info',
@@ -120,12 +119,18 @@ export class MyInfoComponent implements OnInit {
     if (this.user) {
       Swal.fire({
         title: 'Cambiar Contraseña',
-        input: 'password',
-        inputLabel: 'Nueva Contraseña',
-        inputPlaceholder: 'Ingrese su nueva contraseña',
+        html: `
+          <input id="swal-input1" type="password" class="swal2-input" placeholder="Ingrese su nueva contraseña">
+          <label>
+            <input type="checkbox" id="toggle-password"> Mostrar Contraseña
+          </label>
+        `,
         showCancelButton: true,
         confirmButtonText: 'Guardar',
-        cancelButtonText: 'Cancelar'
+        cancelButtonText: 'Cancelar',
+        preConfirm: () => {
+          return (document.getElementById('swal-input1') as HTMLInputElement).value;
+        }
       }).then((result) => {
         if (result.isConfirmed && result.value) {
           const updatedUser = { ...this.user, password: result.value };
@@ -153,28 +158,15 @@ export class MyInfoComponent implements OnInit {
           });
         }
       });
+
+      // Esperar a que el DOM se actualice con el contenido del cuadro de diálogo
+      setTimeout(() => {
+        const togglePassword = document.getElementById('toggle-password') as HTMLInputElement;
+        togglePassword.addEventListener('change', function() {
+          const passwordInput = document.getElementById('swal-input1') as HTMLInputElement;
+          passwordInput.type = this.checked ? 'text' : 'password';
+        });
+      }, 0);
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
